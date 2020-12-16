@@ -1,13 +1,20 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
+import { IGoal } from '../shared/interfaces/goal';
 
 @Injectable()
 export class GoalsService {
-    getGoals() {
-        return GOALS;
-    }
+  getGoals() {
+    return GOALS;
+  }
 }
 
-const GOALS = [
-    "Learn Angular",
-    "Learn Design Patterns"
-]
+const GOALS: IGoal[] = [
+  {
+    label: 'Learn Angular',
+    minutesRequired: 240,
+  },
+  {
+    label: 'Learn Design Patterns',
+    minutesRequired: 560,
+  },
+];

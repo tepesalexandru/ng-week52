@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { GoalsService } from './goals.service';
+import {IGoal} from '../shared/interfaces/goal';
 
 @Component({
     selector: 'goal-container',
@@ -7,7 +8,7 @@ import { GoalsService } from './goals.service';
 })
 export class GoalsContainer implements OnInit{
 
-    goals = [];
+    goals: IGoal[] = [];
 
     constructor(private goalsService: GoalsService) {
 
