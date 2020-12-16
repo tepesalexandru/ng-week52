@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "week52"
+  "defaultProject": "week52",
+  "cli": {
+    "analytics": false
+  }
 }
