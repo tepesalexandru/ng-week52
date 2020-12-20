@@ -11,10 +11,14 @@ export class GoalsService {
 const GOALS: IGoal[] = [
   {
     label: 'Learn Angular',
-    minutesRequired: 240,
+    minutesRequired: 450,
   },
   {
     label: 'Learn Design Patterns',
-    minutesRequired: 560,
+    minutesRequired: 165,
   },
+  {
+    label: 'Improve Week52 Project',
+    minutesRequired: 160
+  }
 ];

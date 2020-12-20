@@ -30,3 +30,27 @@
   right: 0;
   margin: 10px 16px;
 }
+
+.plusIconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+}
+
+.plusIconContainer > p {
+  font-weight: bold;
+}
+
+.plusIcon {
+  height: 48px;
+  width: 48px;
+}
+
+.goalCardsContainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-content: center;
+}

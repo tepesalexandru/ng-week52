@@ -4,7 +4,8 @@ import {IGoal} from '../shared/interfaces/goal';
 
 @Component({
     selector: 'goal-container',
-    templateUrl: './goal-container.component.html'
+    templateUrl: './goal-container.component.html',
+    styleUrls: ['./goal.component.css']
 })
 export class GoalsContainer implements OnInit{
 

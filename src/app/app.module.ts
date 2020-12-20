@@ -8,13 +8,15 @@ import { GoalsContainer } from './goals/goals-container.component';
 import {GoalsService} from './goals/goals.service';
 import {ColorsService} from './shared/services/colors.service';
 import { NavbarComponent } from './nav/navbar.component';
+import { CreateGoalCardComponent } from './goals/create-goal.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     AppComponent,
     GoalComponent,
-    GoalsContainer
+    GoalsContainer,
+    CreateGoalCardComponent
   ],
   imports: [
     BrowserModule
