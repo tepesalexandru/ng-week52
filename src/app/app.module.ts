@@ -12,6 +12,7 @@ import { ColorsService } from './shared/services/colors.service';
 import { NavbarComponent } from './nav/navbar.component';
 import { CreateGoalCardComponent } from './goals/create-goal.component';
 import { CreateGoalComponent } from './goals/create-goal/create-goal.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { CreateGoalComponent } from './goals/create-goal/create-goal.component';
     CreateGoalCardComponent,
     CreateGoalComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [GoalsService, ColorsService],
   bootstrap: [AppComponent],
 })
