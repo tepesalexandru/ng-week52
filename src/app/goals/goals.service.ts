@@ -4,27 +4,22 @@ import { IGoal } from '../shared/interfaces/goal';
 @Injectable()
 export class GoalsService {
 
-  GOALS: IGoal[] = [
-    {
-      label: 'Learn Angular',
-      minutesRequired: 450,
-    },
-    {
-      label: 'Learn Design Patterns',
-      minutesRequired: 165,
-    },
-    {
-      label: 'Improve Week52 Project',
-      minutesRequired: 160
-    }
-  ];
+  GOALS: IGoal[] = [];
 
-  getGoals() {
+  getGoals(): IGoal[] {
+    if (this.GOALS.length === 0) {
+      this.GOALS = JSON.parse(localStorage.getItem('allGoals'));
+    }
     return this.GOALS;
   }
 
-  createGoal(goal: IGoal) {
+  createGoal(goal: IGoal): void {
     this.GOALS.push(goal);
+    this.saveGoals();
+  }
+
+  saveGoals(): void {
+    localStorage.setItem('allGoals', JSON.stringify(this.GOALS));
   }
 }
 
