@@ -1,5 +1,5 @@
 <div>
-  <form #createGoalForm="ngForm" (ngSubmit)="createGoal(createGoalForm.value)">
+  <form #createGoalForm="ngForm" autocomplete="off" (ngSubmit)="createGoal(createGoalForm.value)">
     <div class="form-group">
       <label class="form-label" [style.color]="colors.primary">Goal Name</label>
       <input
@@ -24,6 +24,6 @@
         required
       />
     </div>
-    <button class="btn btn-primary" type="submit">Create</button>
+    <button class="btn btn-primary" [disabled]="createGoalForm.invalid" type="submit">Create</button>
   </form>
 </div>
