@@ -1,5 +1,4 @@
-.container {
-    height: "90px";
+.nav-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -14,6 +13,8 @@
 ul {
     list-style: none;
     display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 li {
