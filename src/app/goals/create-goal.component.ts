@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ColorsService } from '../shared/services/colors.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { ColorsService } from '../shared/services/colors.service';
 
 export class CreateGoalCardComponent implements OnInit {
     colors = null;
-    constructor(private colorsService: ColorsService) { }
+    constructor(private colorsService: ColorsService, private router: Router) { }
 
     ngOnInit() { 
         this.colors = this.colorsService.getDarkTheme();
+    }
+
+    goToAddGoal() {
+        this.router.navigate(['create']);
     }
 }
