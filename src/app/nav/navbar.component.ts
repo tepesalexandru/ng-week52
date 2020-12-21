@@ -1,21 +1,17 @@
-import {Component, OnInit} from '@angular/core';
-import {ColorsService} from '../shared/services/colors.service';
+import { Component, OnInit } from '@angular/core';
+import { ColorsService } from '../shared/services/colors.service';
 
 @Component({
-    selector: 'navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css']
+  selector: 'navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit{
+export class NavbarComponent implements OnInit {
+  colors = null;
 
-    colors = null
+  constructor(private colorsService: ColorsService) {}
 
-    constructor(private colorsService: ColorsService) {
-
-    }
-
-    ngOnInit() {
-        this.colors = this.colorsService.getDarkTheme();
-    }
-
+  ngOnInit() {
+    this.colors = this.colorsService.getDarkTheme();
+  }
 }

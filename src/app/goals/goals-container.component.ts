@@ -1,21 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GoalsService } from './goals.service';
-import {IGoal} from '../shared/interfaces/goal';
+import { IGoal } from '../shared/interfaces/goal';
 
 @Component({
-    selector: 'goal-container',
-    templateUrl: './goal-container.component.html',
-    styleUrls: ['./goal.component.css']
+  selector: 'goal-container',
+  templateUrl: './goal-container.component.html',
+  styleUrls: ['./goal.component.css'],
 })
-export class GoalsContainer implements OnInit{
+export class GoalsContainer implements OnInit {
+  goals: IGoal[] = [];
 
-    goals: IGoal[] = [];
+  constructor(private goalsService: GoalsService) {}
 
-    constructor(private goalsService: GoalsService) {
-
-    }
-
-    ngOnInit() {
-        this.goals = this.goalsService.getGoals();
-    }
+  ngOnInit() {
+    this.goals = this.goalsService.getGoals();
+  }
 }

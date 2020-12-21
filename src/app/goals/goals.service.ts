@@ -3,7 +3,6 @@ import { IGoal } from '../shared/interfaces/goal';
 
 @Injectable()
 export class GoalsService {
-
   GOALS: IGoal[] = [];
 
   getGoals(): IGoal[] {
@@ -22,5 +21,3 @@ export class GoalsService {
     localStorage.setItem('allGoals', JSON.stringify(this.GOALS));
   }
 }
-
-
