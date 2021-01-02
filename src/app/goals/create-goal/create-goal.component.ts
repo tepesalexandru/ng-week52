@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IGoal } from 'src/app/shared/interfaces/goal';
 import { ColorsService } from 'src/app/shared/services/colors.service';
 import { GoalsService } from '../goals.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   templateUrl: './create-goal.component.html',
@@ -25,6 +26,7 @@ export class CreateGoalComponent implements OnInit {
 
   createGoal(formValues) {
     const goal: IGoal = {
+      id: uuidv4(),
       label: formValues.label,
       minutesRequired: formValues.minutesRequired,
     };

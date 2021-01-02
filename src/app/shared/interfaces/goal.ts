@@ -1,4 +1,5 @@
 export interface IGoal {
-    label: string,
-    minutesRequired: number
+    id: string;
+    label: string;
+    minutesRequired: number;
 }

@@ -2,6 +2,7 @@
   class="cardContainer"
   [style.background]="colors.dark3"
   [style.color]="colors.primary"
+  [routerLink]="['goal', goal.id]"
 >
   <p class="cardLabel">{{ goal.label }}</p>
   <p>Required time: {{ goal.minutesRequired }} minutes</p>

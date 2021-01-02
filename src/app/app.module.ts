@@ -13,6 +13,7 @@ import { NavbarComponent } from './nav/navbar.component';
 import { CreateGoalCardComponent } from './goals/create-goal.component';
 import { CreateGoalComponent } from './goals/create-goal/create-goal.component';
 import { FormsModule } from '@angular/forms';
+import { SingleGoalComponent } from './goals/single_goal/single-goal.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     GoalsContainer,
     CreateGoalCardComponent,
     CreateGoalComponent,
+    SingleGoalComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [GoalsService, ColorsService],

@@ -8,6 +8,9 @@ export class GoalsService {
   getGoals(): IGoal[] {
     if (this.GOALS.length === 0) {
       this.GOALS = JSON.parse(localStorage.getItem('allGoals'));
+      if (this.GOALS === null) {
+        this.GOALS = [];
+      }
     }
     return this.GOALS;
   }
