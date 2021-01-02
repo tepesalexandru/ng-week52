@@ -15,6 +15,10 @@ export class GoalsService {
     return this.GOALS;
   }
 
+  getGoal(id: string): IGoal {
+    return this.GOALS.find(goal => goal.id === id);
+  }
+
   createGoal(goal: IGoal): void {
     this.GOALS.push(goal);
     this.saveGoals();

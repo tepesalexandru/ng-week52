@@ -14,6 +14,7 @@ import { CreateGoalCardComponent } from './goals/create-goal.component';
 import { CreateGoalComponent } from './goals/create-goal/create-goal.component';
 import { FormsModule } from '@angular/forms';
 import { SingleGoalComponent } from './goals/single_goal/single-goal.component';
+import { GoalResolver } from './goals/single_goal/goal-resolver.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { SingleGoalComponent } from './goals/single_goal/single-goal.component';
     SingleGoalComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
-  providers: [GoalsService, ColorsService],
+  providers: [GoalsService, ColorsService, GoalResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
