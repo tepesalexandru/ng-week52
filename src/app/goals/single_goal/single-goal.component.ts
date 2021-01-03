@@ -30,11 +30,11 @@ export class SingleGoalComponent implements OnInit{
         this.colors = this.colorsService.getDarkTheme();
     }
 
-    switchMode() {
+    switchMode(): void {
         this.addMode = !this.addMode;
     }
 
-    createTask(formValues) {
+    createTask(formValues): void {
         const newTask: ITask = {
           id: uuidv4(),
           label: formValues.label,
@@ -45,5 +45,9 @@ export class SingleGoalComponent implements OnInit{
         this.goalsService.createTask(this.goal.id, newTask);
         // this.goalsService.createGoal(goal);
         // this.router.navigate(['/']);
+      }
+
+      estimate(): number {
+          return this.goalsService.estimateGoal(this.goal.id);
       }
 }

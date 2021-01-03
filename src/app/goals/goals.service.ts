@@ -25,7 +25,7 @@ export class GoalsService {
     this.saveGoals();
   }
 
-  createTask(goalId: string, task: ITask) {
+  createTask(goalId: string, task: ITask): void {
     const index = this.GOALS.findIndex(goal => goal.id === goalId);
     this.GOALS[index].tasks.push(task);
     this.saveGoals();
@@ -33,5 +33,14 @@ export class GoalsService {
 
   saveGoals(): void {
     localStorage.setItem('allGoals', JSON.stringify(this.GOALS));
+  }
+
+  estimateGoal(goalId: string): number {
+    const index = this.GOALS.findIndex(goal => goal.id === goalId);
+    let requiredTime = 0;
+    this.GOALS[index].tasks.forEach(task => {
+      requiredTime = +requiredTime + +task.minutesRequired;
+    });
+    return requiredTime;
   }
 }

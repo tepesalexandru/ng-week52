@@ -35,7 +35,7 @@
     </div>
     <div *ngIf="!addMode">
         <p [style.color]="colors.primary">Goal Name: {{goal.label}}.</p>
-        <!-- <p [style.color]="colors.primary">Time Required: {{goal.minutesRequired}} minutes.</p> -->
+        <p [style.color]="colors.primary">Time Required: {{estimate()}} minutes.</p>
         <task *ngFor="let task of goal.tasks" [task]="task"></task>
     </div>
    
