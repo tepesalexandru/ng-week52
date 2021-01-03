@@ -1,4 +1,42 @@
 <div>
-    <p [style.color]="colors.primary">Goal Name: {{goal.label}}.</p>
-    <p [style.color]="colors.primary">Time Required: {{goal.minutesRequired}} minutes.</p>
+    <button class="btn btn-primary" (click)="switchMode()">Add Task</button>
+   
+    <div *ngIf="addMode">
+        <div>
+            <form #createGoalForm="ngForm" autocomplete="off" (ngSubmit)="createTask(createGoalForm.value)">
+              <div class="form-group">
+                <label class="form-label" [style.color]="colors.primary">Task Name</label>
+                <input
+                  class="form-control"
+                  (ngModel)="(newLabel)"
+                  name="label"
+                  type="text"
+                  placeholder="Goal Name..."
+                  id="label"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label [style.color]="colors.primary">Required time (minutes)</label>
+                <input
+                  class="form-control"
+                  (ngModel)="(newMinutesRequired)"
+                  name="minutesRequired"
+                  type="text"
+                  placeholder="Required time (minutes)..."
+                  id="minutesRequired"
+                  required
+                />
+              </div>
+              <button class="btn btn-primary" [disabled]="createGoalForm.invalid" type="submit">Create</button>
+            </form>
+          </div>
+          
+    </div>
+    <div *ngIf="!addMode">
+        <p [style.color]="colors.primary">Goal Name: {{goal.label}}.</p>
+        <!-- <p [style.color]="colors.primary">Time Required: {{goal.minutesRequired}} minutes.</p> -->
+        <task *ngFor="let task of goal.tasks" [task]="task"></task>
+    </div>
+   
 </div>

@@ -28,7 +28,7 @@ export class CreateGoalComponent implements OnInit {
     const goal: IGoal = {
       id: uuidv4(),
       label: formValues.label,
-      minutesRequired: formValues.minutesRequired,
+      tasks: []
     };
 
     this.goalsService.createGoal(goal);

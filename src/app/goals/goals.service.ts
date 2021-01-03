@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IGoal } from '../shared/interfaces/goal';
+import { ITask } from '../shared/interfaces/task';
 
 @Injectable()
 export class GoalsService {
@@ -21,6 +22,12 @@ export class GoalsService {
 
   createGoal(goal: IGoal): void {
     this.GOALS.push(goal);
+    this.saveGoals();
+  }
+
+  createTask(goalId: string, task: ITask) {
+    const index = this.GOALS.findIndex(goal => goal.id === goalId);
+    this.GOALS[index].tasks.push(task);
     this.saveGoals();
   }
 
